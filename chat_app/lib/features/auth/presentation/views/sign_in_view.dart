@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class OnBoardingView extends StatelessWidget {
-  const OnBoardingView({super.key});
+class SignInView extends StatelessWidget {
+  const SignInView({super.key});
 
   @override
   Widget build(BuildContext context) {
