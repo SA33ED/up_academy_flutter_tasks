@@ -1,3 +1,4 @@
+import 'package:chat_app/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -17,6 +18,11 @@ abstract class CustomTextStyle {
   );
   static TextStyle poppinsStyle24 = GoogleFonts.poppins(
     fontSize: 24,
+    fontWeight: FontWeight.w600,
+  );
+  static TextStyle poppinsStyle28 = GoogleFonts.poppins(
+    color: AppColors.primary,
+    fontSize: 28,
     fontWeight: FontWeight.w600,
   );
 }

@@ -4,21 +4,32 @@ import 'package:chat_app/core/utils/app_styles.dart';
 import 'package:chat_app/features/auth/presentation/widgets/custom_text_filed.dart';
 import 'package:flutter/material.dart';
 
-class SignInView extends StatelessWidget {
-  const SignInView({super.key});
+class SignUpView extends StatelessWidget {
+  const SignUpView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Column(
+        child: ListView(
           children: [
-            const SizedBox(height: 48),
+            const SizedBox(height: 38),
             Image.asset(
               Assets.imagesAuth1,
             ),
             const SizedBox(height: 71),
+            const CustomTextField(
+              hint: "Name",
+              prefixIcon: Icon(Icons.text_fields),
+            ),
+            const SizedBox(height: 32),
+            const CustomTextField(
+              hint: "Phone Number",
+              prefixIcon: Icon(Icons.phone),
+              suffixIcon: Icon(Icons.remove_red_eye_outlined),
+            ),
+            const SizedBox(height: 32),
             const CustomTextField(
               hint: "Email",
               prefixIcon: Icon(Icons.email_outlined),
@@ -30,20 +41,6 @@ class SignInView extends StatelessWidget {
               suffixIcon: Icon(Icons.remove_red_eye_outlined),
             ),
             const SizedBox(height: 15),
-            GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(context, "ForgetPassword");
-              },
-              child: Align(
-                alignment: Alignment.centerRight,
-                child: Text(
-                  "Forget Password?",
-                  style: CustomTextStyle.poppinsStyle16
-                      .copyWith(color: AppColors.gray),
-                ),
-              ),
-            ),
-            const SizedBox(height: 47),
             Container(
               alignment: Alignment.center,
               width: MediaQuery.of(context).size.width,
@@ -65,22 +62,25 @@ class SignInView extends StatelessWidget {
             const SizedBox(height: 10),
             GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, "SignUp");
+                Navigator.pop(context);
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Don’t have an account?',
+                    'Do You Have an account?',
                     style: CustomTextStyle.poppinsStyle16,
                   ),
                   Text(
-                    'SignUp',
+                    'SignIn',
                     style: CustomTextStyle.poppinsStyle16
                         .copyWith(color: AppColors.primary),
                   ),
                 ],
               ),
+            ),
+            const SizedBox(
+              height: 20,
             )
           ],
         ),
